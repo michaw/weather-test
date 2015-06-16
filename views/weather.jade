@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1= title
+    each day in forecast
+        div
+            hr
+            h2= day.niceDate
+            h3="Summary: " + day.summary
+
+            div
+                strong="Minimum temperature: "
+                =day.temperatureMin + " at " + day.niceTempMinTime
+            div
+                strong="Maximum temperature: "
+                =day.temperatureMax + " at " + day.niceTempMaxTime
+            div
+                strong="Humidity: "
+                =Math.round(day.humidity*100) + "%"
+            div
+                strong="Chance of " + (day.precipType || "rain") +": "
+                =Math.round(day.precipProbability*100) + "%"
+            div
+                strong="Cloud cover: "
+                =Math.round(day.cloudCover*100) + "%"
+            div
+                strong="Wind: "
+                =day.windSpeed + "km/h from the " + day.niceWindBearing
+
+            div
+                strong="Sunrise: "
+                =day.niceSunrise
+            div
+                strong="Sunset: "
+                =day.niceSunset
+            div
+                strong="Moon: "
+                =day.niceMoonPhase

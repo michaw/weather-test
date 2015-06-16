@@ -1,0 +1,58 @@
+
+[0m[0m
+[0m  Forecast wrapper[0m
+[0m    get function[0m
+[2K[0G    [32m  √[0m[90m takes a set of co-ords and returns a 7 day forecast (plus today)[0m[31m (1377ms)[0m
+[0m    getDay function[0m
+[2K[0G    [32m  √[0m[90m takes a set of co-ords, a day name, and returns a forecast for that day[0m[31m (1341ms)[0m
+[0m    getDay function with day='today'[0m
+[2K[0G    [32m  √[0m[90m takes a set of co-ords, and returns today's forecast[0m[31m (1363ms)[0m
+[0m    getNiceBearing function[0m
+[2K[0G    [32m  √[0m[90m translates a bearing into compass points[0m
+[0m    getNiceMoonPhase function[0m
+[2K[0G    [32m  √[0m[90m translates a floating-point into a human-readable moon-phase[0m
+
+[0m  Index page[0m
+[0mGET / [32m200 [0m194.881 ms - 221[0m
+[2K[0G  [32m  √[0m[90m should return a status of 200[0m
+
+[0m  Weather page[0m
+[0m    /weather/:location[0m
+[0mGET /weather/sydney [32m200 [0m1693.908 ms - 5282[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'application/json'[0m
+[2K[0G    [32m  √[0m[90m body should contain an array[0m
+[2K[0G    [32m  √[0m[90m with length=8[0m
+[0m    weather/:location requesting html[0m
+[0mGET /weather/sydney [32m200 [0m1829.378 ms - 4245[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'text/html'[0m
+[0m    /weather/:location/today[0m
+[0mGET /weather/sydney/today [32m200 [0m1696.189 ms - 692[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'application/json'[0m
+[2K[0G    [32m  √[0m[90m body should contain an object[0m
+[0m    weather/:location/today requesting html[0m
+[0mGET /weather/sydney/today [32m200 [0m1712.767 ms - 709[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'text/html'[0m
+[0m    /weather/:location/:weekday[0m
+[0mGET /weather/sydney/saturday [32m200 [0m1663.051 ms - 705[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'application/json'[0m
+[2K[0G    [32m  √[0m[90m body should contain an object[0m
+[0m    weather/:location/:weekday requesting html[0m
+[0mGET /weather/sydney/saturday [32m200 [0m1930.805 ms - 743[0m
+[2K[0G    [32m  √[0m[90m should return a status of 200[0m
+[2K[0G    [32m  √[0m[90m should return content of type 'text/html'[0m
+
+[0m  Geocoder wrapper[0m
+[0m    lookup function[0m
+[2K[0G    [32m  √[0m[90m returns an array[0m
+[2K[0G    [32m  √[0m[90m which contains objects[0m
+[2K[0G    [32m  √[0m[90m which have a number representing latitude[0m
+[2K[0G    [32m  √[0m[90m and longitude[0m
+
+
+[92m [0m[32m 26 passing[0m[90m (15s)[0m
+
