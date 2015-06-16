@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
-    "test": "grunt test"
+    "test": "grunt mochaTest"
   },
   "author": "Micha Wotton",
   "license": "MIT",
@@ -26,7 +26,6 @@
     "grunt-cli": "^0.1.13",
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.2.5",
-    "request": "^2.57.0",
-    "zombie": "^4.0.11"
+    "request": "^2.57.0"
   }
 }
