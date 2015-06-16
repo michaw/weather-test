@@ -4,6 +4,7 @@
   "description": "Weather forecast using forecast.io",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm install -g grunt grunt-cli",
     "start": "node ./bin/www",
     "test": "grunt mochaTest"
   },
@@ -23,7 +24,6 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "grunt-cli": "^0.1.13",
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.2.5",
     "request": "^2.57.0"
