@@ -7,9 +7,6 @@ var express = require('express'),
     moment = require('moment-timezone');
 
 
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
-});
 router.get('/:location', function(req, res, next) {
     var location = req.params.location;
     geocode.lookup(location, function(err, coords){
